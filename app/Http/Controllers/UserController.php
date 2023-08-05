@@ -11,6 +11,7 @@ class UserController extends Controller
      */
     public function index()
     {
+        permission_check('user-management');
         return view('user.index');
     }
 
@@ -19,6 +20,7 @@ class UserController extends Controller
      */
     public function create()
     {
+        permission_check('user-management');
         return view('user.create');
     }
 

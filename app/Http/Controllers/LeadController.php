@@ -11,6 +11,7 @@ class LeadController extends Controller
      */
     public function index()
     {
+        permission_check('lead-management');
         return view('lead.index');
     }
 
