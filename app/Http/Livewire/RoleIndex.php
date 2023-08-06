@@ -13,4 +13,11 @@ class RoleIndex extends Component
         $roles = Role::where('name', '!=', 'Super Admin')->paginate(10);
         return view('livewire.role-index', ['roles' => $roles]);
     }
+    
+    public function roleDelete($id){
+        $role = Role::findOrFail($id);
+        $role->delete();
+        flash()->addInfo('Role deleted successfully');
+        return redirect()->route('role.index');
+    }
 }
