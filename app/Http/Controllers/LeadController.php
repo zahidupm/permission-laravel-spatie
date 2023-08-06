@@ -20,6 +20,7 @@ class LeadController extends Controller
      */
     public function create()
     {
+        permission_check('lead-management');
         return view('lead.create');
     }
 
@@ -44,7 +45,8 @@ class LeadController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        permission_check('lead-management');
+        return view('lead.edit', ['lead_id' => $id]);
     }
 
     /**
