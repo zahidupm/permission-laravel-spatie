@@ -11,6 +11,7 @@ class RoleController extends Controller
      */
     public function index()
     {
+        permission_check('user-management');
         return view('user.role.index');
     }
 
@@ -19,6 +20,7 @@ class RoleController extends Controller
      */
     public function create()
     {
+        permission_check('user-management');
         return view('user.role.create');
     }
 
@@ -43,6 +45,7 @@ class RoleController extends Controller
      */
     public function edit(string $id)
     {
+        permission_check('user-management');
         return view('user.role.edit', ['role_id' => $id]);
     }
 
